@@ -1,0 +1,24 @@
+import numpy as np
+x1=[720,650,780,600,680]
+x2=[50000,40000,60000,30000,45000]
+
+cs=int(input("Enter the credit score: "))
+ai=int(input("Enter the annual income: "))
+x1_min=np.min(x1)
+x1_max=np.max(x1)
+x2_min=np.min(x2)
+x2_max=np.max(x2)
+
+xcred=(cs-x1_min)/(x1_max-x1_min)
+print(xcred)
+xinc=(ai-x2_min)/(x2_max-x2_min)
+print(xinc)
+
+
+b=np.random.rand()
+y=1*xcred+0.5*xinc
+
+if(y>0):
+    print("Loan Approved")
+else:
+    print("Loan Denied")
